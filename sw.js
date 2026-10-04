@@ -1,6 +1,6 @@
 // Копилка: простой сервис-воркер. Страница сначала берётся из сети (всегда свежая версия),
 // а если сети нет, открывается последняя сохранённая копия.
-const CACHE = "kopilka-v1";
+const CACHE = "kopilka-v2";
 const FILES = ["./", "./index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./icon-180.png"];
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).catch(() => {}));
